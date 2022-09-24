@@ -53,8 +53,6 @@ def get_unique_customers_by_sql(name) -> List:
     query_sql = f'''
         SELECT FirstName, COUNT(*) FROM customers WHERE FirstName = '{name}' GROUP BY FirstName;
     '''
-    # if name:
-    #     query_sql += f" WHERE FirstName = '{name}';"
     return unwrapper(execute_query(query_sql))
 
 def get_sum_of_invoice_items() -> List:
